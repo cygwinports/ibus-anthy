@@ -1,0 +1,10 @@
+inherit gnome2
+
+DESCRIPTION="IBus Japanese X Input Module engine"
+HOMEPAGE="http://code.google.com/p/ibus/"
+SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
+
+PATCH_URI="1.2.6-no-undefined.patch
+           1.2.6-python-install.patch"
+
+CYGCONF_ARGS="--libexecdir=/usr/lib/ibus"

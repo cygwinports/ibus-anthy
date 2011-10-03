@@ -1,0 +1,11 @@
+--- origsrc/ibus-anthy-1.2.6/engine/Makefile.am	2011-05-15 21:04:39.000000000 -0500
++++ src/ibus-anthy-1.2.6/engine/Makefile.am	2011-10-02 23:53:34.709023800 -0500
+@@ -32,7 +32,7 @@ engine_anthy_PYTHON = \
+ 	$(NULL)
+ engine_anthydir = $(pkgdatadir)/engine
+ 
+-anthy_DATA = \
++anthy_PYTHON = \
+ 	anthy.py \
+ 	$(NULL)
+ anthy_LTLIBRARIES = _anthy.la
