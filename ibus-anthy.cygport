@@ -1,7 +1,7 @@
 inherit python gnome2
 
 NAME="ibus-anthy"
-VERSION=1.2.7
+VERSION=1.4.99.20121006
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="IBus Japanese Input Method engine"
@@ -10,10 +10,10 @@ for X11 systems. It provides full featured and user friendly input method
 user interface. It also may help developers to develop input method easily."
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
+REQUIRES="girepository-Gtk3.0 girepository-IBus1.0"
 
 PATCH_URI="1.2.6-no-undefined.patch
            1.2.6-python-install.patch"
 
 CYGCONF_ARGS="--libexecdir=/usr/lib/ibus"
 
-KEEP_LA_FILES="none"
