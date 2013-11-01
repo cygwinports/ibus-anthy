@@ -11,4 +11,7 @@ user interface. It also may help developers to develop input method easily."
 REQUIRES="girepository-Gtk3.0 girepository-IBus1.0 kasumi"
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${NAME}-${VERSION}.tar.gz"
-PATCH_URI="1.2.6-no-undefined.patch"
+PATCH_URI="
+	1.2.6-no-undefined.patch
+	1.5.4-vpath.patch
+"
