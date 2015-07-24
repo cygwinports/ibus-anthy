@@ -1,0 +1,20 @@
+--- origsrc/ibus-anthy-1.5.7/engine/python2/Makefile.am	2015-07-16 04:04:18.000000000 -0500
++++ src/ibus-anthy-1.5.7/engine/python2/Makefile.am	2015-07-23 16:45:11.232686700 -0500
+@@ -65,6 +65,7 @@ _anthy_la_LDFLAGS = \
+ 	@PYTHON_LIBS@ \
+ 	-avoid-version \
+ 	-module \
++	-no-undefined \
+ 	$(NULL)
+ 
+ anthy.py anthy_wrap.c: anthy.i
+--- origsrc/ibus-anthy-1.5.7/engine/python3/Makefile.am	2015-07-16 04:04:18.000000000 -0500
++++ src/ibus-anthy-1.5.7/engine/python3/Makefile.am	2015-07-23 16:45:17.431473900 -0500
+@@ -65,6 +65,7 @@ _anthy_la_LDFLAGS = \
+ 	@PYTHON_LIBS@ \
+ 	-avoid-version \
+ 	-module \
++	-no-undefined \
+ 	$(NULL)
+ 
+ anthy.py anthy_wrap.c: anthy.i

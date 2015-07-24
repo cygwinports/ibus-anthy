@@ -1,17 +1,47 @@
-inherit python gnome2
+inherit python3 gnome2
 
 NAME="ibus-anthy"
-VERSION=1.5.4
+VERSION=1.5.7
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="IBus Japanese Input Method engine"
 DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
 for X11 systems. It provides full featured and user friendly input method
 user interface. It also may help developers to develop input method easily."
-REQUIRES="girepository-Gtk3.0 girepository-IBus1.0 kasumi"
-HOMEPAGE="http://code.google.com/p/ibus/"
-SRC_URI="http://ibus.googlecode.com/files/${NAME}-${VERSION}.tar.gz"
+HOMEPAGE="https://github.com/fujiwarat/ibus-anthy/wiki"
+SRC_URI="https://github.com/fujiwarat/ibus-anthy/archive/${VERSION}/ibus-anthy-${VERSION}.tar.gz"
 PATCH_URI="
-	1.2.6-no-undefined.patch
-	1.5.4-vpath.patch
+	1.5.7-intltool.patch
+	1.5.7-no-undefined.patch
+	1.5.7-vpath.patch
+	1.5.7-engine-paths.patch
 "
+
+PKG_NAMES="${NAME} libanthygobject1.0_5 libanthygobject1.0-devel girepository-Anthy9000"
+ibus_anthy_REQUIRES="girepository-Anthy9000 girepository-Gtk3.0 girepository-IBus1.0 kasumi"
+ibus_anthy_CONTENTS="
+	etc/postinstall/ibus-anthy.sh
+	usr/libexec/ibus-engine-anthy
+	usr/libexec/ibus-setup-anthy
+	usr/share/appdata/anthy.appdata.xml
+	usr/share/applications/ibus-setup-anthy.desktop
+	usr/share/doc/ibus-anthy/
+	usr/share/ibus-anthy/
+	usr/share/ibus/component/anthy.xml
+	usr/share/icons/hicolor/*/apps/ibus-anthy.*
+	usr/share/locale/
+"
+libanthygobject1_0_5_CATEGORY="Libs"
+libanthygobject1_0_5_SUMMARY="GObject bindings for libanthy (runtime)"
+libanthygobject1_0_5_CONTENTS="usr/bin/cyganthygobject-1.0-5.dll"
+libanthygobject1_0_devel_CATEGORY="Libs"
+libanthygobject1_0_devel_SUMMARY="GObject bindings for libanthy (runtime)"
+libanthygobject1_0_devel_CONTENTS="
+	usr/include/ibus-anthy-1.0/anthygcontext.h
+	usr/lib/libanthygobject-1.0.dll.a
+"
+girepository_Anthy9000_CATEGORY="Libs"
+girepository_Anthy9000_SUMMARY="GObject Introspection bindings for libanthy"
+girepository_Anthy9000_CONTENTS="usr/*/gir*/Anthy-9000.*"
+
+CYGCONF_ARGS="--with-python=${PYTHON3}"

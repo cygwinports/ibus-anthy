@@ -1,0 +1,12 @@
+--- origsrc/ibus-anthy-1.5.7/configure.ac	2015-07-16 04:04:18.000000000 -0500
++++ src/ibus-anthy-1.5.7/configure.ac	2015-07-23 17:40:50.037661100 -0500
+@@ -414,9 +414,6 @@ GETTEXT_PACKAGE=ibus-anthy
+ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Define to the read-only architecture-independent data directory.])
+ 
+-AM_GNU_GETTEXT([external])
+-AM_GNU_GETTEXT_VERSION(0.16.1)
+-
+ 
+ dnl - OUTPUT files
+ AC_CONFIG_FILES([ po/Makefile.in
