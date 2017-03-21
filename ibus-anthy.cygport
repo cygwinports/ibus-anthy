@@ -1,7 +1,7 @@
 inherit python3 gnome2
 
 NAME="ibus-anthy"
-VERSION=1.5.7
+VERSION=1.5.9
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="IBus Japanese Input Method engine"
@@ -14,7 +14,6 @@ PATCH_URI="
 	1.5.7-intltool.patch
 	1.5.7-no-undefined.patch
 	1.5.7-vpath.patch
-	1.5.7-engine-paths.patch
 "
 
 PKG_NAMES="${NAME} libanthygobject1.0_5 libanthygobject1.0-devel girepository-Anthy9000"
@@ -23,7 +22,7 @@ ibus_anthy_CONTENTS="
 	etc/postinstall/ibus-anthy.sh
 	usr/libexec/ibus-engine-anthy
 	usr/libexec/ibus-setup-anthy
-	usr/share/appdata/anthy.appdata.xml
+	usr/share/appdata/ibus-anthy.appdata.xml
 	usr/share/applications/ibus-setup-anthy.desktop
 	usr/share/doc/ibus-anthy/
 	usr/share/ibus-anthy/

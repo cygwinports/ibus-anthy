@@ -1,11 +1,11 @@
 --- origsrc/ibus-anthy-1.5.7/data/Makefile.am	2015-07-16 04:04:18.000000000 -0500
 +++ src/ibus-anthy-1.5.7/data/Makefile.am	2015-07-23 16:44:38.647048900 -0500
-@@ -41,7 +41,7 @@ if ENABLE_ZIPCODE
- dicts_DATA += zipcode.t
+@@ -42,7 +42,7 @@ if ENABLE_ZIPCODE
  
  zipcode.t: $(ANTHY_ZIPCODE_FILE)
--	$(PYTHON) zipcode-textdic.py $<
-+	$(PYTHON) $(srcdir)/zipcode-textdic.py $<
+ 	@echo "Generate $@"; \
+-	$(PYTHON) zipcode-textdic.py $<; \
++	$(PYTHON) $(srcdir)/zipcode-textdic.py $<; \
+ 	$(NULL)
  
  CLEANFILES += zipcode.t
- endif
